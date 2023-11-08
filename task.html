@@ -6,30 +6,12 @@
         Известна денежная сумма. Разменять её купюрами 500, 100, 10 и монетой 2 руб., если это возможно.</title>
 </head>
 <body>
-<form name="money">
-    <p>Введите сумму:
-        <input type="Number" name="sum" value="0" id="amount">
-    <input type="button" name="check" value="Проверить" id="check_all">
-    </p>
+<body>
+    <h1>Введите сумму для размена:</h1>
+    <input type="text" id="inputAmount">
+    <button onclick="razmenSum()">Разменить</button>
+    <div id="result"></div>
 
-    <p>
-        Размен: </p>
-        <p> 500 рублей <input id="500rub" name="500rub" type="number" value=0></p>
-        <p> 100 рублей <input id="100rub" name="100rub" type="number" value=0></p>
-        <p> 5 рублей <input id="5rub" name="5rub" type="number" value=0></p>
-        <p> 2 рубля <input id="2rub" name="2rub" type="number" value=0></p>
-
-</form>
-
-<script src="./tired.js"></script>
-
-
-
-
-
-
-
-
-</form>
+    <script src="./task2.js"> </script>
 </body>
 </html>
