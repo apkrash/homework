@@ -1,24 +1,28 @@
-function makeChange() {
-const denominations = [500];
-const change = document.getElementById("500rub").value;
+        function razmenSum() {
+            var inputAmount = parseFloat(document.getElementById('inputAmount').value);
 
-for (let i = 0; i < denominations.length; i++) {
-const denomination = denominations[i];
-const count = Math.floor(amount / denomination);
-amount -= count * denomination;
+            if (isNaN(inputAmount)) {
+                document.getElementById('result').innerHTML = 'Пожалуйста, введите числовую сумму.';
+                return;
+            }
 
-for (let j = 0; j < count; j++) {
-change.push(denomination);
-}
-}
+            var availableNotes = [500, 100, 10, 2];
+            var change = [];
 
-return change;
-}
+            for (var i = 0; i < availableNotes.length; i++) {
+                var note = availableNotes[i];
+                while (inputAmount >= note) {
+                    change.push(note);
+                    inputAmount -= note;
+                }
+            }
 
-const result = makeChange(amount)
-
-const amount= document.getElementById("amount")
-amount.elementAmount.addEventListener('input', verify);
+            if (inputAmount === 0) {
+                document.getElementById('result').innerHTML = 'Разменяно: ' + change.join(', ');
+            } else {
+                document.getElementById('result').innerHTML = 'Невозможно разменять данную сумму купюрами и монетами.';
+            }
+        }
 
 
 
